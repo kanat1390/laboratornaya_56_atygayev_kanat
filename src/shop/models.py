@@ -16,6 +16,9 @@ class Product(models.Model):
     qty = models.PositiveIntegerField(default=0, null=False, blank=False)
     price = models.DecimalField(max_digits=7, decimal_places=2, default=0.00)
 
+    def display_price(self):
+        return f'{self.price}$'
+
     def __str__(self):
         return self.name
 
