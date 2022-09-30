@@ -7,6 +7,7 @@ CATEGORY_CHOICES = (
     ('smartphone','Смартфоны'),
 )
 
+
 class Product(models.Model):
     name = models.CharField(null=False, blank=False, max_length=100)
     description = models.TextField(null=True, blank=True, max_length=2000)
