@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mt-3">Добавление товара</h2>
+<form action="" method="POST" class="mt-3">
+    {% csrf_token %}
+    {{form.name}}
+    {{form.description}}
+    <label for="category">Количество товара на складе</label>
+    {{form.category}}
+    <label for="price">Цена</label>
+    {{form.price}}
+    <label for="qty">Количество товара на складе</label>
+    {{form.qty}}
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
+{% endblock content %}
