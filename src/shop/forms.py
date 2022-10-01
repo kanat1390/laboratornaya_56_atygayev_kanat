@@ -11,5 +11,6 @@ class ProductModelForm(forms.ModelForm):
             'category': forms.Select(attrs={'class':'form-control mb-3', 'id':'category'}),
             'qty':forms.TextInput(attrs={'class':'form-control mb-3', 'id':'qty'}),
             'price':forms.TextInput(attrs={'class':'form-control mb-3', 'id':'price'}),
+            'image':forms.FileInput(attrs={'class':'form-control mb-3', 'id':'image'}),
         }
 

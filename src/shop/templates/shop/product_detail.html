@@ -17,5 +17,18 @@
         <p class="card-text">Описание товара: {{ product.description }}</p>
         <small>На складе: {{ product.qty }}шт.</small>
     </div>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        Действия
+    </a>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div class="d-flex gap-2">
+                <a href="{% url 'product-update' pk=product.pk %}"><i class="fa-solid fa-pen-to-square"
+                        style="color:black;"></i></a>
+                <a href="{% url 'product-delete' product.pk %}"><i class="fa-solid fa-trash" style="color:red;"></i></a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}
