@@ -1,36 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for product in product_list %}
+
 <div class="album py-5 bg-light">
     <div class="container">
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for product in product_list %}
             <div class="col">
                 <div class="card shadow-sm">
                     {% if not product.image %}
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>{{ product.name }}</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em"></text>
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                            dy=".3em">Thumbnail</text>
                     </svg>
                     {% else %}
-                    <img src="{{product.image.url}}" alt="{{product.name}}" width="100%" height="225">
+                    <img src="{{ product.image.url }}" alt="" width="100%" height="225">
                     {% endif %}
+
                     <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mt-2">Категория: {{ product.get_category_display }}
-                        </h6>
-                        <p class="mb-2">Цена: {{product.display_price}}</p>
-                        <a href="#" class="btn btn-link">Посмотреть товар</a>
+                        <h3>{{product.name}}</h3>
+                        <p class="card-text">Категория: {{product.get_category_display }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{{ product.get_absolute_url }}"
+                                    class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor%}
         </div>
     </div>
 </div>
-</div>
-{% endfor%}
+
 {% endblock content %}

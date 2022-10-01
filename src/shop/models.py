@@ -1,5 +1,7 @@
 from random import choices
 from django.db import models
+from django.urls import reverse
+from .managers import ProductManager
 
 CATEGORY_CHOICES = (
     ('other', 'Разное'),
@@ -16,8 +18,13 @@ class Product(models.Model):
     qty = models.PositiveIntegerField(default=0, null=False, blank=False)
     price = models.DecimalField(max_digits=7, decimal_places=2, default=0.00)
 
+    objects = ProductManager()
+
     def display_price(self):
         return f'{self.price}$'
+    
+    def get_absolute_url(self):
+        return reverse('product-detail', kwargs={'pk':self.id})
 
     def __str__(self):
         return self.name
