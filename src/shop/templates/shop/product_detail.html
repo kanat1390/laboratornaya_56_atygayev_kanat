@@ -14,6 +14,7 @@
     {% endif %}
     <div class="card-body">
         <h3>Название: {{ product.name }}</h3>
+        <p>Категория: <a href="{{ product.get_category_url }}">{{ product.get_category_display }}</a></p>
         <p class="card-text">Описание товара: {{ product.description }}</p>
         <small>На складе: {{ product.qty }}шт.</small>
     </div>

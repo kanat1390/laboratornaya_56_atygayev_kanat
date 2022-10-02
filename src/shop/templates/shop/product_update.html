@@ -2,18 +2,5 @@
 
 {% block content %}
 <h2 class="mt-3">Изменение товара</h2>
-<form action="" method="POST" class="mt-3" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.name}}
-    {{form.description}}
-    <label for="category">Количество товара на складе</label>
-    {{form.category}}
-    <label for="price">Цена</label>
-    {{form.price}}
-    <label for="qty">Количество товара на складе</label>
-    {{form.qty}}
-    <label for="image">Изображение</label>
-    {{form.image}}
-    <button type="submit" class="btn btn-primary">Создать</button>
-</form>
+{% include 'shop/partial/product_form.html' with btn_text='Обновить' %}
 {% endblock content %}
