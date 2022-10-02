@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/0adb5dcff4.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="bg-light">
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -26,22 +26,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{% url 'product-list' %}" class="nav-link px-2 text-white">Товары</a></li>
                     <li><a href="{% url 'product-create' %}" class="nav-link px-2 text-white">Добавить товар</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                 </ul>
-
-                <form
-                    class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3"
-                    role="search">
-                    <div>
-                        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
-                            aria-label="Search">
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    </div>
-                </form>
             </div>
         </div>
     </header>

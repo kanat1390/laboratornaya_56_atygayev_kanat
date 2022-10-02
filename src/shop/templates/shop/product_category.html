@@ -2,17 +2,14 @@
 
 {% block content %}
 <div class="album py-5">
-    <div class="d-flex justify-content-start gap-5">
-        <p style="margin-left:30px;">Категории:</p>
-        {% for category in category_list %}
-        <a href="{% url 'product-by-category' category.0%}">{{category.1}}</a>
-        {% endfor %}
-    </div>
-    <div class="container">
+    {% if not product_list %}
+    <p class="text-center">Товары не найдены</p>
+    {% else %}
+    <a href="{% url 'product-list' %}" class="btn btn-secondary">Вернуться</a>
+    <h3 class="mt-3">{{product_list.0.get_category_display }}</h3>
+    {% endif %}
+    <div class="container mt-3">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% if not product_list %}
-            <p class="mt-3 text-center">Товары не найдены</p>
-            {% endif %}
             {% for product in product_list %}
             <div class="col">
                 <div class="card shadow-sm">
@@ -30,8 +27,7 @@
 
                     <div class="card-body">
                         <h3>{{product.name}}</h3>
-                        <p class="card-text">Категория: <a
-                                href="{{ product.get_category_url }}">{{product.get_category_display }}</a></p>
+                        <p class="card-text">Категория: {{product.get_category_display }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="{{ product.get_absolute_url }}"
