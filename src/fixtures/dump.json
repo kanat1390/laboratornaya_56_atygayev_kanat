@@ -60,6 +60,30 @@
     }
 },
 {
+    "model": "shop.product",
+    "pk": 14,
+    "fields": {
+        "name": "Samsung S21",
+        "description": "- тип: фен\r\n- цвет: красный, белый\r\n- страна производитель: Китай\r\n- мощность, вт: 1800\r\n- дополнительные режимы: ионизация\r\n- конструкция: сменные насадки",
+        "image": "products/images/xiaomi_RtYUeG1.jpg",
+        "category": "smartphone",
+        "qty": 100,
+        "price": "900.00"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 15,
+    "fields": {
+        "name": "dsd",
+        "description": "dsdsd",
+        "image": "",
+        "category": "other",
+        "qty": 0,
+        "price": "0.00"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
